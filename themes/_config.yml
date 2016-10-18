@@ -1,0 +1,191 @@
+
+# html lang
+language: zh-CNsince
+# main menu navigation
+menu:
+  主页: index.html
+  文章: archives 
+  #标签: tags
+  #分类: categories
+  作品: works
+  关于: about
+  Github: https://github.com/cqliulei
+
+social:
+  GitHub: https://github.com/cqliulei
+  # Coding.NET: https://coding.net/u/Stiekel
+  # Twitter: https://twitter.com/SidCN
+  Weibo: http://weibo.com/1632162353
+  # DouBan: http://www.douban.com/people/Stiekel/
+
+  #rss:  /atom.xml
+
+# Google analytics
+google_analytics: UA-84926965-1
+# Baidu tongji
+baidu_analytics: 076c9e7a9827d49ee5fbd569590ecf65
+# Duoshuo-weibo
+duoshuo_shortname: cqliulei
+# Disqus-google
+disqus_shortname: 
+# Uyan
+uyan_id:
+# jiaThis id
+# if you want to change the style of jiaThis, please go to chage the following file:
+# theme/random/layouts/includes/jiathis.swig
+jiaThis_uid: 
+jiathisConfig:
+  data_track_clickback: true
+  summary: ""
+  showClose: true
+  shortUrl: false
+  hideMore: false
+
+
+
+# Miscelaneous
+favicon: /favicon.ico
+
+# stylesheets loaded in the <head>
+stylesheets:
+- /css/random.css
+- /css/vegas.min.css
+- /css/highlight-railscasts.css
+- /css/jquery.fancybox.css
+- /css/iconfont/iconfont.css
+- /css/jquery.fancybox-thumbs.css
+- /css/plyr.css
+
+#about layout
+aboutstyles:
+- /css/bootstrap.min.css
+- /css/works/works-style.css
+
+# scripts loaded in the end of the body
+scripts:
+- /js/jquery-2.2.3.min.js
+- /js/vegas.min.js
+- /js/random.js
+- /js/highlight.pack.js
+- /js/jquery.mousewheel.pack.js
+- /js/jquery.fancybox.pack.js
+- /js/jquery.fancybox-thumbs.js
+- /js/plyr.js
+
+# ignore visitor statistics on special server, for example on you local computer or debugging server
+isIgnoreSpecialHostVisitor: true
+ignoreHostList:
+  - localhost
+  - 127.0.0.1
+
+# if you want to turn off the background images, pleaase set this value as true
+turnoffBackgroundImage: 
+  # home page
+  index: false
+  # arcihve / categories / tags
+  post_list: true
+  # post and page
+  post: true
+# when you turn off backgrounds, you can set a background color.
+backgroundColor: D7CCC8
+ 
+backgroundImages:
+# - http://7te9fe.com1.z0.glb.clouddn.com/bgimg_1.jpg?imageView2/1/w/__width__/h/__height__
+# - http://7te9fe.com1.z0.glb.clouddn.com/bgimg_2.jpg?imageView2/1/w/__width__/h/__height__
+# - http://7te9fe.com1.z0.glb.clouddn.com/bgimg_3.jpg?imageView2/1/w/__width__/h/__height__
+# - http://7te9fe.com1.z0.glb.clouddn.com/bgimg_4.jpg?imageView2/1/w/__width__/h/__height__
+# - http://7te9fe.com1.z0.glb.clouddn.com/bgimg_5.jpg?imageView2/1/w/__width__/h/__height__
+
+vegasConfig:
+  # more about config http://vegas.jaysalvat.com/documentation/settings/
+  # animation: 'random'
+  # transition: 'swirlRight'
+  preload­Image: true
+  transition:
+    - slideLeft2
+    - slideRight2
+    # - zoomIn
+    # - swirLeft
+    # - swirRight
+    # - flash
+    - flash2
+  timer: true
+  delay: 5000
+  shuffle: true
+  count: 28
+
+unsplashConfig:
+  # more about config on https://unsplash.it/
+  # blur: true
+  gravity: 'north' # north, east, south, west, center
+  # greyscale: true
+
+#avatar: http://7te9fe.com1.z0.glb.clouddn.com/default_avatar.jpg
+avatar: /img/default_avatar.jpg
+logoavatar: /img/logo_avatar.jpg
+
+# do not like fancybox, set this as false, this will turn it off
+fancybox: true
+
+# set the visibility of hide button in left bottom.
+hideButtonVisibility: true
+
+#Feed generator for Hexo https://github.com/hexojs/hexo-generator-feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+
+
+#My works
+# friends
+myworks: [
+    {
+        title: "[WAP]通盛创微贷",
+        date: "2016.02",
+        src: "",
+        tags: [ html5 , amazeui, swiper滑动,layer弹出],
+        subtitle: "前端开发：通盛创微贷手机WAP网站开发",
+        text: "由于是手机wap网站，所以只针对手机，第一时间就想到了移动优先的跨屏响应式框架bootstrap和amazeui,
+               在两者之间犹豫了一下，最终，选择了amazeui,项目里面比较重要和复杂的是贷款申请验证以及交互，
+               因为用了响应式框架，一切都变得简单起来，不过由于当时项目时间紧急，故没有做到前后端完全分离，
+               还有待于进一步完善…
+              ",
+              
+        href: "http://m.tosenscredit.com"
+    },
+    {
+        title: "[PC]通盛创微贷",
+        date: "2015.08",
+        src: "",
+        tags: [requireJS,html5,normalize,modernizr,swiper滑动],
+        subtitle: "前端开发：通盛创微贷官网开发",
+        text: "根据产品需求和设计对公司官网进行二次开发(不想吐槽之前网站被拿出去外包),
+              我主要负责前端界面开发和ajax交互的实现；在前端开发之前以确定网站以标准浏览器为主，
+              故最初就放弃了万恶的ie6，ie7&ie8界面展示效果会次一些，但完全能正常使用；
+              前端使用了requirejs进行模块化加载js以及运用swiper插件进行滑动，网站总体中规中矩，
+              后期会考虑尝试前后端完全分离…",
+        href: "http://www.tosenscredit.com"
+    },
+    {
+        title: "[PC&&WAP]茶语网",
+        date: "2014.10",
+        src: "",
+        tags: [ html , jquery,swiper滑动,layer弹出 ],
+        subtitle: "前端开发：通盛创微贷官网,以及手机WAP网站开发",
+        text: "由于该项目是一个综合性电子商务网站，涉及功能、版块众多，以及专题页面的灵活多变，
+              所以基本上是运用前端基础知识进行按部就班的开发。（ps：由于时间紧，工作量大，
+              不得不提高开发效率的同时加班加点埋头苦干…）",
+        href: "http://m.chayu.com/"
+    },
+    {
+        title: "[PC]陈升普洱官网",
+        date: "2014.05",
+        src: "",
+        tags: [ html,jquery,layer弹出 ],
+        subtitle: "前端开发：陈升普洱PC官网",
+        text: "项目没有特别说明之处，就是运用html，css,jquery等前端基础以及PS进行切片…",
+        href: "http://www.cspuer.com/"
+    }
+] 
