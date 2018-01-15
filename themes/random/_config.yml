@@ -121,8 +121,9 @@ unsplashConfig:
   # greyscale: true
 
 #avatar: http://7te9fe.com1.z0.glb.clouddn.com/default_avatar.jpg
-avatar: /img/default_avatar.jpg
-logoavatar: /img/logo_avatar.jpg
+avatar: http://img.cqliulei.com/assets/img/default_avatar.jpg
+#logoavatar: /img/logo_avatar.jpg
+logoavatar: http://img.cqliulei.com/assets/img/logo_avatar.jpg
 
 # do not like fancybox, set this as false, this will turn it off
 fancybox: true
@@ -171,7 +172,7 @@ myworks: [
     {
         title: "[PC&&WAP]茶语网",
         date: "2014.10",
-        src: "",
+        src: "http://img.cqliulei.com/assets/img/cy.jpg",
         tags: [ html , jquery,swiper滑动,layer弹出 ],
         subtitle: "前端开发：通盛创微贷官网,以及手机WAP网站开发",
         text: "由于该项目是一个综合性电子商务网站，涉及功能、版块众多，以及专题页面的灵活多变，
@@ -182,7 +183,7 @@ myworks: [
     {
         title: "[PC]陈升普洱官网",
         date: "2014.05",
-        src: "",
+        src: "http://img.cqliulei.com/assets/img/cspuer.jpg",
         tags: [ html,jquery,layer弹出 ],
         subtitle: "前端开发：陈升普洱PC官网",
         text: "项目没有特别说明之处，就是运用html，css,jquery等前端基础以及PS进行切片…",
