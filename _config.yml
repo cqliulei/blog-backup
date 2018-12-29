@@ -7,7 +7,7 @@ title: Lynn Lau
 subtitle: 为梦想，不休不止
 description: 为梦想，不休不止
 author: liulei
-language:
+language: zh-CN
 timezone:
 
 # URL
@@ -78,5 +78,5 @@ theme: random
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
     type: git
-    repo: https://github.com/cqliulei/cqliulei.github.io.git 
+    repo: https://github.com/cqliulei/cqliulei.github.io.git
     branch: master

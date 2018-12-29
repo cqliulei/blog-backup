@@ -49,6 +49,12 @@
     </div>
   </div>
 
+  <!-- gitment评论-->
+  {% if page.comments && (theme.gitment_shortname || config.gitment_shortname) %}
+    {% include 'gitment.swig' %}
+  {% endif %}
+
+
   <div id="bottom-outer">
     <div id="bottom-inner">
       Site by {{ config.author }} using
@@ -65,12 +71,16 @@
       {% endif %}
     </div>
   </div>
+ 
+</div>
 </div>
 
-</div>
-{% if page.comments && (theme.duoshuo_shortname || config.duoshuo_shortname) %}
-  {% include 'duoshuo.swig' %}
-{% endif %}
+
+  <!-- gitalk评论-->
+    {% if page.comments && (theme.gitalk_shortname || config.gitalk_shortname) %}
+      {% include 'gitalk.swig' %}
+    {% endif %}
+
 {% if page.comments && (config.disqus_shortname || theme.disqus_shortname) %}
   {% include 'disqus.swig' %}
 {% endif %}

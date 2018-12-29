@@ -1,7 +1,7 @@
 {% extends 'includes/layout.swig' %}
 
 {% block body %}
-  <article id="page">
+  <article id="page" >
     {% for cat in site.categories %}
       {% if cat.name === page.category %}
         <h1 class="center-title">

@@ -11,10 +11,13 @@ $(function(){
   $("#btn-view").on('click', showHideToggle);
 
   // code highlight
-  hljs.configure({useBR: true});
+  hljs.configure({useBR: false});
   hljs.initHighlightingOnLoad();
-  $(".highlight").each(function(i, block) {
+  $("pre").each(function(i, block) {
     hljs.highlightBlock(block);
+/*    hljs.lineNumbersBlock(block, {
+      singleLine: true
+    });*/
   });
 
   $("#show-menu").on('click', function(){

@@ -8,7 +8,7 @@ opacityValue = 0.95
 // mobile max width
 mobileMaxWidth = 480px
 mobileOpacityValue = 0.95
-codeFontFamily = Consolas, Monaco, Courier New, Lucida Console;
+codeFontFamily = -apple-system, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Arial, sans-serif,Consolas, Monaco, Courier New, Lucida Console;
 
 body
   background-color: #D7CCC8;
@@ -29,7 +29,7 @@ a {
 }
 
 a:hover {
-  // background-color: #1E8BC3; 
+  // background-color: #1E8BC3;
   // color: #fff;
   text-decoration: underline;
 }
@@ -47,8 +47,9 @@ a:hover {
     width: desktopWidth;
     margin-left: - (desktopWidth / 2);
   }
-  // box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, .55);
-  box-shadow: 0 0 2.5em #5d656c;
+   //box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, .55);
+  //box-shadow: 0 0 2.5em #5d656c;
+   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
 }
 
 #menu-outer, #container
@@ -169,7 +170,7 @@ a:hover {
     width: mdDesktopWidth - marginBorder * 2;
   @media (max-width: mdDesktopWidth)
     width: desktopWidth - marginBorder * 2;
-    
+
 #menu-inner .left
   float: left;
 
@@ -211,7 +212,7 @@ a:hover {
   font-weight: 900;
 #menu-list ul li.active a
   color: #000;
-  
+
 #menu-list ul li:hover
   font-weight: 900;
 
@@ -225,7 +226,7 @@ a:hover {
   vertical-align: middle;
   width: 32px;
   height: 32px;
-  
+
 // menu end
 
 // bottom start
@@ -246,6 +247,8 @@ a:hover {
 
 #content-outer
   padding: marginBorder;
+  //box-sizing: border-box;
+  //overflow: hidden;
 
 // content end
 
@@ -263,7 +266,7 @@ a:hover {
 
 .center-title
   text-align: center;
-  
+
 .category-list
   text-align: center;
   padding-left: 0px;
@@ -306,7 +309,7 @@ ul.category-list li a:hover
 
 .post-title-item p
   margin-top: 2px;
-  
+
 #pagination
   margin-top: 20px;
   text-align: center;
@@ -322,7 +325,7 @@ ul.category-list li a:hover
   text-decoration: none;
 
 // hide all button
-#btn-view 
+#btn-view
   color: #C8F7C5;
   text-align: center;
   background-color: #1E824C;
@@ -356,7 +359,7 @@ article img
     max-width: mdDesktopWidth - marginBorder * 2;
   @media (max-width: mdDesktopWidth)
     max-width: desktopWidth - marginBorder * 2;
-    
+
 #user-card
   text-align: center;
   color: #333;
@@ -398,10 +401,10 @@ article img
   color: #fff;
 .category-list-item .active:hover
   background-color: #22A7F0;
-  
+
 .social-icon
   padding-left: 0px;
-      
+
 .social-icon li
   display: inline;
 
@@ -462,7 +465,7 @@ article img
   // border: 5px #52B3D9 solid;
   opacity: 1;
   background-size: 40px 40px;
-  
+
 .side-navigate .item-icon
   pointer-events: auto;
   opacity: 0.55;
@@ -496,7 +499,7 @@ article img
   vertical-align: center;
   background-color: #52B3D9;
   height: 52px;
-  
+
 .side-navigate .next .item-icon
   background-image: url('next.png')
   float: right;
@@ -532,11 +535,13 @@ article img
   right: 0px;
   top: 0px;
   display: block;
+  //line-height: 18px;
   @media (max-width: lgDesktopWidth + 400px)
     display: none;
-    
+
 .random-toc
   // top: 30px;
+  background: #3c3f41;
   background: #444;
   color: #bbb;
   height: 500px;
@@ -544,21 +549,23 @@ article img
   font-size: 12px;
   height: 100%;
   overflow-y: auto;
+  border-radius:0 0 5px 5px;
 .random-toc ol
   padding-left: 15px;
 .random-toc h2
   text-align: center;
 .random-toc a
-  color: #bbb;
+  color: #fff;
   display: block;
 // .random-toc li:hover
 .toc-text
   display: block;
 .toc-text:hover
-  background-color: #666;
+  background-color: #444;
 .btn-hide-toc
   // top: 0px;
   border: none;
+  cursor: pointer;
   z-index: 1;
   display: block;
   width: 100%;
@@ -567,23 +574,24 @@ article img
   color: #bbb;
 .btn-hide-toc:hover
   background-color: #888;
-  
+
 // code style
 figure.highlight
-  margin: 0px -10px 0px -10px;
-
+  //margin: 0px -10px 0px -10px;
+  //margin: 0;
   td.gutter
-    padding-right: 20px;
+    //padding-right: 20px;
 
   .line
-    white-space: pre-wrap;
+    white-space: pre;
 
 code
   font-family: codeFontFamily;
   background-color: #ddd;
-  font-style: italic;
+  //font-style: italic;
   padding-left: 12px;
   padding-right: 12px;
+  border-radius: 3px;
 
 table .line
   font-family: codeFontFamily;
@@ -634,7 +642,7 @@ blockquote
     margin-left: 0px;
     margin-right: 0px;
   // #user-card
-    // width: 200px; 
+    // width: 200px;
 @media (max-width: mobileMaxWidth)
   .random-center
     position: static;
@@ -649,7 +657,7 @@ blockquote
     opacity: mobileOpacityValue;
   #menu-outer
     opacity: mobileOpacityValue;
-  
+
 @media (max-height: 480px)
   .random-center
     position: static;
@@ -665,3 +673,4 @@ blockquote
 @media (max-height: 320px)
   .random-center
     margin-top: 75px;
+

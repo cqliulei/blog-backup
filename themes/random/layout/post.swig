@@ -1,7 +1,7 @@
 {% extends 'includes/layout.swig' %}
 
 {% block body %}
-  <article id="post">
+  <article id="post" class="post-show-content">
     <h1>{{ page.title || __('without_title') }}</h1>
     <p class="page-title-sub">
       <span id = "post-title-date">{{ __('created_at') }} {{ date(page.date) }}</span>

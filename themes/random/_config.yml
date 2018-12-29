@@ -1,6 +1,6 @@
 
 # html lang
-language: zh-CNsince
+language: zh-CN
 # main menu navigation
 menu:
   主页: index.html
@@ -24,10 +24,20 @@ social:
 google_analytics: UA-84926965-1
 # Baidu tongji
 baidu_analytics: 076c9e7a9827d49ee5fbd569590ecf65
-# Duoshuo-weibo
-duoshuo_shortname: cqliulei
+# Gitment comment
+#gitment_shortname:
+#gitmentstyle: /js/gitment/gitment.css
+#gitmentscript: /js/gitment/gitment.js
+#gitmentscript: https://imsun.github.io/gitment/dist/gitment.browser.js# Gitment comment
+# Gitalk comment
+gitalk_shortname: cqliulei
+gitalkstyle: https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
+gitalkscript: https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
+
+
+
 # Disqus-google
-disqus_shortname: 
+disqus_shortname:
 # Uyan
 uyan_id:
 # jiaThis id
@@ -55,6 +65,7 @@ stylesheets:
 - /css/iconfont/iconfont.css
 - /css/jquery.fancybox-thumbs.css
 - /css/plyr.css
+- /css/layout.css
 
 #about layout
 aboutstyles:
@@ -67,6 +78,7 @@ scripts:
 - /js/vegas.min.js
 - /js/random.js
 - /js/highlight.pack.js
+#- https://cdn.bootcss.com/highlightjs-line-numbers.js/2.5.0/highlightjs-line-numbers.js
 - /js/jquery.mousewheel.pack.js
 - /js/jquery.fancybox.pack.js
 - /js/jquery.fancybox-thumbs.js
@@ -82,13 +94,15 @@ ignoreHostList:
 turnoffBackgroundImage: 
   # home page
   index: false
+  categories: true
+  arcihve: true
   # arcihve / categories / tags
-  post_list: true
+  post_list: false
   # post and page
   post: true
 # when you turn off backgrounds, you can set a background color.
-backgroundColor: D7CCC8
- 
+backgroundColor: f4f5f5
+
 backgroundImages:
 # - http://7te9fe.com1.z0.glb.clouddn.com/bgimg_1.jpg?imageView2/1/w/__width__/h/__height__
 # - http://7te9fe.com1.z0.glb.clouddn.com/bgimg_2.jpg?imageView2/1/w/__width__/h/__height__

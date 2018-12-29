@@ -1,0 +1,263 @@
+/*公共样式*/
+
+.post-show-content {
+    color: #2f2f2f;
+    word-break: break-word !important;
+    word-break: break-all;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7
+}
+
+.post-show-content p {
+    margin: 0 0 25px
+}
+
+.post-show-content blockquote h1:last-child,
+.post-show-content blockquote h2:last-child,
+.post-show-content blockquote h3:last-child,
+.post-show-content blockquote h4:last-child,
+.post-show-content blockquote h5:last-child,
+.post-show-content blockquote h6:last-child,
+.post-show-content blockquote li:last-child,
+.post-show-content blockquote ol:last-child,
+.post-show-content blockquote p:last-child,
+.post-show-content blockquote ul:last-child {
+    margin-bottom: 0
+}
+
+.post-show-content .video-package .video-description p {
+    margin: 0
+}
+
+.post-show-content li p {
+    overflow: visible
+}
+
+.post-show-content a {
+    color: #3194d0
+}
+
+.post-show-content a:hover {
+    color: #3194d0;
+    text-decoration: underline
+}
+
+.post-show-content a.active,
+.post-show-content a:active,
+.post-show-content a:focus {
+    color: #3194d0
+}
+
+.post-show-content a.disabled,
+.post-show-content a.disabled.active,
+.post-show-content a.disabled:active,
+.post-show-content a.disabled:focus,
+.post-show-content a.disabled:hover,
+.post-show-content a[disabled],
+.post-show-content a[disabled].active,
+.post-show-content a[disabled]:active,
+.post-show-content a[disabled]:focus,
+.post-show-content a[disabled]:hover {
+    cursor: not-allowed;
+    color: #f5f5f5
+}
+
+.post-show-content ol,
+.post-show-content p,
+.post-show-content ul {
+    word-break: break-word !important;
+    word-break: break-all
+}
+
+.post-show-content hr {
+    margin: 0 0 20px;
+    border-top: 1px solid #ddd
+}
+
+.post-show-content h1,
+.post-show-content h2,
+.post-show-content h3,
+.post-show-content h4,
+.post-show-content h5,
+.post-show-content h6 {
+    margin: 0 0 15px;
+    font-weight: 700;
+    color: #2f2f2f;
+    line-height: 1.7;
+    text-rendering: optimizelegibility
+}
+
+.post-show-content h1 {
+    font-size: 26px
+}
+
+.post-show-content h2 {
+    font-size: 24px
+}
+
+.post-show-content h3 {
+    font-size: 22px
+}
+
+.post-show-content h4 {
+    font-size: 20px
+}
+
+.post-show-content h5 {
+    font-size: 18px
+}
+
+.post-show-content h6 {
+    font-size: 16px
+}
+
+.post-show-content img {
+    max-width: 100%
+}
+
+.post-show-content blockquote {
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: #f7f7f7;
+    border-left: 6px solid #b4b4b4;
+    word-break: break-word !important;
+    word-break: break-all;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px
+}
+
+.post-show-content blockquote p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7
+}
+
+.post-show-content blockquote .image-package {
+    width: auto;
+    margin-left: 0
+}
+
+.post-show-content ol,
+.post-show-content ul {
+    padding: 0;
+    margin: -5px 0 20px 20px
+}
+
+.post-show-content ol li,
+.post-show-content ul li {
+    line-height: 30px
+}
+
+.post-show-content ol li ol,
+.post-show-content ol li ul,
+.post-show-content ul li ol,
+.post-show-content ul li ul {
+    margin-top: 15px
+}
+
+.post-show-content ol .image-package,
+.post-show-content ul .image-package {
+    width: auto !important;
+    margin-left: 0 !important
+}
+
+.post-show-content >pre {
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 13px;
+    word-wrap: normal;
+    word-break: break-word !important;
+    word-break: break-all;
+    white-space: pre;
+    overflow: auto;
+    border-radius: 4px
+}
+
+.post-show-content > pre code {
+    padding: 0;
+    background-color: transparent;
+    white-space: pre
+}
+
+.post-show-content code {
+    padding: 2px 4px;
+    background-color: #f6f6f6;
+    border: none;
+    font-size: 13px;
+    white-space: pre-wrap;
+    vertical-align: middle
+    display: block;
+    overflow-x: auto;
+    padding: .5em;
+    color: #98c379;;
+    background: #282c34;
+    font-style: normal;
+}
+
+.post-show-content table {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    border-left: none;
+    word-break: normal
+}
+
+.post-show-content table tr:nth-of-type(2n) {
+    background-color: hsla(0, 0%, 71%, .1)
+}
+
+.post-show-content table thead th {
+    vertical-align: middle;
+    text-align: inherit
+}
+
+.post-show-content table td,
+.post-show-content table th {
+    padding: 8px;
+    border: 1px solid #ddd;
+    line-height: 20px;
+    vertical-align: middle
+}
+
+.post-show-content table th {
+    font-weight: 700
+}
+.post-show-content  table td.gutter{
+    padding: 0;
+    width: 5%;
+}
+.post-show-content  table td.code{
+    padding: 0;
+    width: 95%;
+}
+
+
+.post-show-content .highlight{
+    background: #282c34;
+    border-radius: 3px;
+    overflow: auto;
+    padding: 0;
+    margin: 0;
+}
+.post-show-content .highlight table{
+    border: none;
+    border-collapse: collapse;
+}
+.post-show-content .highlight table pre{
+    margin:10px 0 0;
+    font-size: 13px;
+}
+.post-show-content table td, .post-show-content table th{
+    border: none;
+}
+.post-show-content  table td.gutter pre *{
+    color: #999;
+}
+
+/*gitment-container*/
+#gitment-container{
+    padding: 0 20px;
+}
