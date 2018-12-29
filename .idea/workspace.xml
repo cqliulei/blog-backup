@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39ecd5ce-6158-416e-88ee-1b7cd74199af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/themes/random/layout/includes/gitalk.swig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/themes/random/source/css/layout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/random/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/random/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/random/languages/en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/random/languages/en.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/random/layout/category.swig" beforeDir="false" afterPath="$PROJECT_DIR$/themes/random/layout/category.swig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/random/layout/includes/duoshuo.swig" beforeDir="false" afterPath="$PROJECT_DIR$/themes/random/layout/includes/gitment.swig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/random/layout/includes/layout.swig" beforeDir="false" afterPath="$PROJECT_DIR$/themes/random/layout/includes/layout.swig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/random/layout/post.swig" beforeDir="false" afterPath="$PROJECT_DIR$/themes/random/layout/post.swig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/random/source/css/highlight-railscasts.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/random/source/css/highlight-railscasts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/random/source/css/random.styl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/random/source/css/random.styl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/random/source/js/highlight.pack.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/random/source/js/highlight.pack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/random/source/js/random.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/random/source/js/random.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/CNAME" beforeDir="false" afterPath="$PROJECT_DIR$/source/CNAME" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -86,7 +71,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1400" />
@@ -172,16 +157,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1546045924270</updated>
-      <workItem from="1546045926939" duration="6006000" />
+      <workItem from="1546045926939" duration="6630000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6006000" />
+    <option name="totallyTimeSpent" value="6630000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
