@@ -25,7 +25,7 @@ google_analytics: UA-84926965-1
 # Baidu tongji
 baidu_analytics: 076c9e7a9827d49ee5fbd569590ecf65
 # Gitment comment
-#gitment_shortname:
+#gitment_shortname: cqliulei
 #gitmentstyle: /js/gitment/gitment.css
 #gitmentscript: /js/gitment/gitment.js
 #gitmentscript: https://imsun.github.io/gitment/dist/gitment.browser.js# Gitment comment
@@ -74,7 +74,7 @@ aboutstyles:
 
 # scripts loaded in the end of the body
 scripts:
-- /js/jquery-2.2.3.min.js
+- /js/jquery-2.2.4.min.js
 - /js/vegas.min.js
 - /js/random.js
 - /js/highlight.pack.js

@@ -54,6 +54,10 @@
     {% include 'gitment.swig' %}
   {% endif %}
 
+    <!-- gitalk评论-->
+    {% if page.comments && (theme.gitalk_shortname || config.gitalk_shortname) %}
+      {% include 'gitalk.swig' %}
+    {% endif %}
 
   <div id="bottom-outer">
     <div id="bottom-inner">
@@ -76,10 +80,7 @@
 </div>
 
 
-  <!-- gitalk评论-->
-    {% if page.comments && (theme.gitalk_shortname || config.gitalk_shortname) %}
-      {% include 'gitalk.swig' %}
-    {% endif %}
+
 
 {% if page.comments && (config.disqus_shortname || theme.disqus_shortname) %}
   {% include 'disqus.swig' %}
