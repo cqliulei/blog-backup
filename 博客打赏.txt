@@ -1,0 +1,18 @@
+参考：博客打赏、上一页，下一页功能
+http://iamwr.com/
+http://strangeai.pro/
+
+
+https://zhuanlan.zhihu.com/p/26625249
+
+
+
+https://hexo.io/zh-cn/docs/commands
+rm -rf .deploy_git
+hexo g
+hexo d
+hexo clean -->hexo generate -->hexo deploy
+
+
+Gitment评论功能接入踩坑教程
+https://www.jianshu.com/p/57afa4844aaa
