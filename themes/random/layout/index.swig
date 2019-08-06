@@ -22,4 +22,9 @@
     </div>
   </div>
 </div>
+<div class="dha-footer">
+  <p>©2019 cqliulei.com 版权所有 <span>蜀ICP备15017955号</span></p>
+</div>
 {% include 'includes/footer.swig' %}
+
+

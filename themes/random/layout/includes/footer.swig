@@ -2,6 +2,7 @@
 {% if config.hideButtonVisibility || theme.hideButtonVisibility %}
 <div id="btn-view">Hide</div>
 {% endif %}
+
 <script>
 // is trigger analytics / tongji script
 var isIgnoreHost = false;

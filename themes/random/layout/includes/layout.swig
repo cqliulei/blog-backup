@@ -60,7 +60,12 @@
     {% endif %}
 
   <div id="bottom-outer">
+    
     <div id="bottom-inner">
+
+      <!--<p>关于我们 | 官方博客 | 商务合作 | 友情链接 | 加入我们 | 帮助</p>-->
+      <p>©2019 cqliulei.com 版权所有 <span>蜀ICP备15017955号</span></p>
+    
       Site by {{ config.author }} using
       <a href="http://hexo.io">Hexo</a>
       <br>

@@ -2,8 +2,8 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <br>              
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center footer-box">
+                <p>©2019 cqliulei.com 版权所有 <span>蜀ICP备15017955号</span></p>          
                 <p class="copyright text-muted">
                      Site by {{ config.author }} using
 				      <a href="http://hexo.io">Hexo</a>

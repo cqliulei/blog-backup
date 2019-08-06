@@ -10,181 +10,165 @@ comments: true
 
 > 最近被同事问起，一个input如何画出7条不同的边线，当时头脑一阵懵B，搬着手一一数来：“border边框一条、outline一条” ，不就最多只有两条边线吗？（背景图片那些不算）… 
 
-## 写在前面
-尔后，想着是不是有什么奇淫技巧，突然眼前一亮，box-shadow这个属性应该能用到，不过怎么实现呐？【最后，在同事的提醒下，box-shadow居然可以有多重投影，真是css基础不扎实呀，为止搬好凳子，拿起本子做好笔记，以防以后忘记这些基础的东西，并且警示自己@_@！】
+## 一、写在前面
+尔后，想着是不是有什么奇淫技巧，突然眼前一亮，box-shadow这个属性应该能用到，不过怎么实现呐？【最后，在同事的提醒下，box-shadow居然可以有多重投影，真是css基础不扎实呀，为此搬好凳子，拿起本子做好笔记，以防以后忘记这些基础的东西，并且时时警示自己@_@！】
 
-## 实现
-接下来看是如何实现的呢？
+## 二、接下来看是如何实现的呢？
+box-shadow属性可以为盒模型设定投影,但是其实它还有设定边框的功能。
+
+#### 1.使用box-shadow 内投影实现多重边框
+
+box-shadow正规语法
+
 ```css
-    input {
-        
-    }
-
+none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ]#
 ```
-
-
-网页授权流程分为四步，这里只说前端需要做的，其中的第一步：跳转授权页面获取code。
-这里分享下我的授权逻辑（下图），它有两个优点：   
-1. 授权跳转在dom渲染之前，体验会好一些；   
-2. 本地存储了openId，前后端均不用频繁的与微信服务器交互。  
-
-## 效果
-如果你页面中有用到分享、上传图片、微信支付等功能，那么需要先进行js-sdk授权。我这边封装成了2个方法：initConfig和setShare，方便在路由/页面切换的时候重复调用。
-```javascript
-//main.js
-import wxsdk from './config/wxsdk.js' //该模块提供initConfig和setShare方法，具体代码太长见github
-Vue.prototype.wxsdk = wxsdk;//挂载到全局
-
-//使用
- created() {
-   this.wxsdk.initConfig(location.href.split("#")[0], () => {
-     this.wxsdk.setShare(this.user.openId);
-    });
- }
-```
-## 三、webpack-dev-server解决跨域
-讲真的所有跨域解决方案都必须有服务端的参与，诚然这个问题是浏览器抛出的，但让前端去解决真的很冤。下面两个配置让你永远告别跨域烦恼。本地开发用webpack-dev-server，测试生产环境用nginx。
-```javascript
-//接口根路径http://47.105.59.***:9090/zt-wx
-//以vue-cli搭建的项目config举例 config/index.js
-  dev: {
-    proxyTable: {
-      '/zt-wx': {
-        target: 'http://47.105.59.***:9090',  //目标接口域名
-        changeOrigin: true  //是否跨域
-      }
-    },
-  }
-//实际发起请求时的url
-this.http.get(`/zt-wx/api/wx/info`).then(); //http是我自己对axios的再封装  
-
-//nginx代理配置
-server {
-    location /zt-wx {
-		proxy_pass http://47.105.59.***:9090;
-    }
-}        
-```
-## 四、iso初次加载白屏、跳转白屏
-**问题现象**： ios页面初次加载白屏，刷新后正常，但切换到其他页面再后退，又会白屏。   
-**问题原因**：在ios机器上使用webview开发Vue项目时候，go history(-1)，无法将body的高度拉掉，使得内容被遮住了。   
-**解决办法**：html，body都是100%，#app撑起了父元素的告诉，但是浏览器默认的滚动scroll并不是#app，而是body,某些因素，造成返回history 后，无法复原（ios 的锅），为此，我们将#app进行了绝对定位，并让它重新成为 scroll 的对象，从而解决问题。   
 ```css
-#app {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-}
+    /* x偏移量 | y偏移量 | 阴影颜色 */
+    box-shadow: 60px -16px teal;
+    
+    /* x偏移量 | y偏移量 | 阴影模糊半径 | 阴影颜色 */
+    box-shadow: 10px 5px 5px black;
+    
+    /* x偏移量 | y偏移量 | 阴影模糊半径 | 阴影扩散半径 | 阴影颜色 */
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    
+    /* 插页(阴影向内) | x偏移量 | y偏移量 | 阴影颜色 */
+    box-shadow: inset 5em 1em gold;
+    
+    /* 任意数量的阴影，以逗号分隔 */
+    box-shadow: 3px 3px red, -1em 0 0.4em olive;
+    
+    /* 全局关键字 */
+    box-shadow: inherit;
+    box-shadow: initial;
+    box-shadow: unset;
 ```
-参考资料：https://blog.csdn.net/guxuehua/article/details/79026655
-## 五、ios路由/跳转页面后分享失效
-**问题现象**：ios微信路由到另一个页面选择图片OK，但分享失效，刷新这个页面分享就正常了。   
-已累计尝试解决超过8小时，至今未果。   
-参考资料：https://www.zhihu.com/question/59388458/answer/340351305
-## 六、上传图片报错：处理异常
-这个报错甚是诡异，因为前端和后端代码均没有“处理异常”这4个字。本来想甩锅给微信不管了的，但随后在做限制上传图片大小功能的时候阴差阳错的给解决了。   
-**问题原因**：后端tomcat服务默认设置表单提交数据大小上限为2M，大于2M就会报错。   
-**解决办法**：后端大神把server.xml中maxPostSize的值改为-1后解决。   
-参考资料：https://blog.csdn.net/w18756901575/article/details/79374621
-## 七、正确导出图片格式
-这个项目首页基本是由图片堆砌成的，一开始切出来的图(默认.png)压缩后在400k-1.3M之间。一开始还以为PSD素材有问题。直到项目最后才闪回，想起图片格式的知识点，改导出成.jpg格式后压缩出来的图片基本控制在100K以内了。具体的.png.jpg这些图片格式的知识有兴趣的自己查。
-## 八、vuex使用之同步用户信息
-讲道理小项目是不应该用vuex的，但是用着确实爽，即简单又省心省力。由于我总是忘记它的方法名，所以在这里贴下代码，方便以后随时cv。  
-```javascript
-//config/store.js
-const store = new Vuex.Store({
-    state: {
-        user: {}
-    },
-    mutations：{
-        updateUser(state, data){
-            state.user = data;
-        }
+
+box-shadow可以传递五个参数，第一个参数(none/inset)表示投影，第二个参数(offset-x/offset-y)表示偏移量，第三个参数(blur-radius)表示投影的模糊程度，第四个参数(spread-radius)表示投影的扩张度，最后一个参数(color)表示投影的颜色。【[具体参考MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow)】
+
+
+然而我们平常很少用到第四个参数，在这里使用第四个参数，就可以让投影进行扩张，通过设定比较合适的值，就可以模拟出边框的效果了。
+
+同样，box-shadow属性可以传入多个阴影的列表，用“,”分割即可。因此，只要我们定义一个阴影列表，并且递增的增加其扩张度参数的取值，就可以绘制出多重边框的效果了。
+
+效果图:
+![](http://qiniu.cqliulei.com/image/blog201812/2018-12-15-1.jpg)
+
+html:
+```html 
+    <input type="text" class="input">
+```
+ 
+
+css代码:
+```css
+    .input {
+        width:100px;
+        height: 50px;
+        margin:50px;
+        border:1px solid #000;
+         /*注意：向外扩张的距离要每次累加；内嵌投影即添加参数为inset,该参数可选，当不设置时即为外投影*/  
+        box-shadow:0 0 0 1px red,0 0 0 2px blue,0 0 0 3px green,0 0 0 4px orange; 
     }
-})
-//在组件中使用
-computed: {
-    user() {
-        return this.$store.state.user;
-    }
-}
-//在需要的时候更新数据
-this.$store.commit("updateUser", user);
+
 ```
-## 九、使用html2canvas生成的海报不显示图片
-**问题原因**：引入的图片资源路径跨域造成的。   
-**解决办法**：我先是按照官方给的那个php的方案弄的，未能解决。最后舔着脸让后端大佬把图片资源目录挪到我web服务目录下给解决的。   
-```javascript
-//安装
-npm install --save html2canvas
-//引入
-import html2canvas from "html2canvas";
-//使用
-const myPosterWrap = document.getElementById("posterWrap");
-html2canvas(myPosterWrap).then(canvas => {
-    this.posterSrc = canvas.toDataURL("image/png");
-    this.uploadPosterImg(this.posterSrc);
-});
+
+#### 2. 可以这样：(通过“,”分割,设置4边不同颜色)
+
+css代码
+```css
+    box-shadow: 
+       0px -2px 2px 0px #ff0000,   /*上边阴影  红色*/
+
+       -2px 0px 2px 0px #3bee17,   /*左边阴影  绿色*/
+
+       2px 0px 2px 0px #2279ee,    /*右边阴影  蓝色*/
+
+       0px 2px 2px 0px #eede15;    /*下边阴影  黄色*/
 ```
-## 十、css黑科技之放置指定比例的图片
-就是把不定宽图片按指定比例显示，直接上码（1：1.25）。
+
+效果
+![](http://qiniu.cqliulei.com/image/blog201812/2018-12-15-6.png)
+
+
+#### 3. 还可以这样^_^：（七彩虹圈）
+html代码
 ```html
-//html
-<div class="poster-img-wrap">
-    <div class="poster-img-place"></div>
-    <img class="poster-img" :src="user.picAddress" alt="">
-</div>
+    <div class="rainbow">七彩虹圈</div>  
 ```
-```css
-//less
-.poster-img-wrap {
-    position: absolute;
-    top: 28%;
-    left: 0;
-    right: 0;
-    width: 80%;
-    margin: 0 auto;
-    .poster-img-place {
-        width: 100%;
-        padding-top: 125%;
-    }
-    .poster-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
-```
-## 十一、ios页面加载不全不能滚动
-**问题描述** ：ios从首页进入，跳转其他页面再后退到首页，首页只显示一屏内容且无法滚动。
-**问题原因**：在于ios浏览器内核的别致渲染逻辑：它会预先找到相应的overflow: scroll元素，如果子元素高度高于父元素，则建立原生的scrollView实现滚动。问题就出现在这个“预先”上，它预先获取的高度并不是子元素渲染后的真实高度。
-**解决办法**：给设置了滚动的#app元素下的子元素p-index设置min-height: calc(100% + 1px);
-```css
-#app {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-}
-.p-index{
-   min-height: calc(100% + 1px);
-}
-```
-其实能解决全靠这篇博文，这里就不赘述了。https://blog.csdn.net/nongweiyilady/article/details/83039868   
-神奇的是，我能看到这篇文章全来赖于地铁上无聊打开了很久没打开的CSDNapp，切到前端分类，“不滚动”三个字立马映入眼帘，点进去的第一眼 ，就感觉是对的人了。迷茫的时候就看书，古人诚不我欺！
-## 一些忠告
-> - 能小程序就别网页开发；
-> - 不意淫不揣摩待定的需求；
-> - 坚持看图作业的优良传统；
-> - 迷茫的时候看书，焦虑的时候学习；
 
-  
+css代码
+```css
+    .rainbow{
+        margin: 50px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        box-shadow:
+        0 0 0 4px #F00,/*赤*/
+        0 0 0 8px #F60,/*橙*/
+        0 0 0 12px #FF0,/*黄*/
+        0 0 0 16px #0C0,/*绿*/
+        0 0 0 20px #699,/*青*/
+        0 0 0 24px #06C,/*蓝*/
+        0 0 0 28px #909;/*紫*/
+    }
+```
+
+效果
+![](http://qiniu.cqliulei.com/image/blog201812/2018-12-15-7.png)
+
+优点：可以设置任意大小，任意多条边框
+
+缺点：CSS3属性，无法兼容低版本浏览器，多重边框只能是实线
+
+## 三、以下是CSS3实现多重边框的其他方法，仅供参考：
+
+#### 1.div嵌套实现多重边框
+这是最常规的方法，这里不做详细解释呈现。
+效果图:
+![](http://qiniu.cqliulei.com/image/blog201812/2018-12-15-2.jpg)
+
+
+优点：border边框可以设置各种线型，比如虚线、实线。
+缺点：可能无法修改结构或修改html结构成本高；多个div都设置圆角时，边框之间不能完全贴合。圆角多边框效果图：
+![](http://qiniu.cqliulei.com/image/blog201812/2018-12-15-3.png)
+
+#### 2.使用outline+outline-offset实现多重边框（只能实现两层边框）
+如果我们只需要绘制两层边框，使用outline也可以做到。outline是border外面的一层，和border原理一样。通过设定outline的样式可以为border外面再设定一层边框。
+效果图:
+![](http://qiniu.cqliulei.com/image/blog201812/2018-12-15-4.jpg)
+
+html代码
+```html
+    <div id="outline">outlie实现多重边框</div>  
+```
+
+css代码
+```css
+    #outline {   
+        width: 84px;   
+        height: 84px;   
+        border: 8px solid blue;   
+        /*-webkit-border-radius: 5px;  
+        -moz-border-radius: 5px;  
+        border-radius: 5px;*/  
+        outline: 10px solid brown;   
+        outline-offset: 0px;   
+        /*border和outline之间的距离*/  
+        margin: 20px;   
+        /*因为outline不影响布局，使用margin给边框腾位置*/  
+    }  
+```
+
+但是需要注意的是，outline属性设定的边框不会随着内部元素边界样式的变化而变化。也就是说，如果元素边框带了圆角，那么outline绘制出的最外层边框仍然是矩形的。这是outline绘制边框的一个缺憾。如下图：
+![](http://qiniu.cqliulei.com/image/blog201812/2018-12-15-5.jpg)
+
+
+优点：它跟边框类似，可以设置各种线型，比如虚线、实线。
+
+缺点：outline不影响布局，需使用margin给边框腾位置。以防被其它元素覆盖。如果容器本身有圆角的话，描边并不能完全贴合圆角！
+
+
+#### 3.使用box-shadow 内投影实现多重边框。(推荐使用)

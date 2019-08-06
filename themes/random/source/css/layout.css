@@ -10,7 +10,7 @@
 }
 
 .post-show-content p {
-    margin: 0 0 25px
+    margin: 0 0 5px
 }
 
 .post-show-content blockquote h1:last-child,
@@ -240,7 +240,7 @@
     border-radius: 3px;
     overflow: auto;
     padding: 0;
-    margin: 0;
+    margin: 0 0 10px;
 }
 .post-show-content .highlight table{
     border: none;
@@ -260,4 +260,15 @@
 /*comment-container*/
 .git_comment{
     padding: 0 20px;
+}
+.dha-footer{
+    margin: 15px 0 0;
+    text-align:center; 
+    position: absolute;
+    width: 100%;
+    font-size: 14px;
+    font-family: arial,sans-serif;
+    color: #333;
+    bottom: 10px;
+    text-shadow: 2px 1px 1px #fff;
 }

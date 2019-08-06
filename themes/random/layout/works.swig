@@ -110,6 +110,15 @@
         font-size: 17px;
     }
 
+    .footer-box{
+        color: #888;
+        text-align: center;
+        padding: 10px;
+        padding-top: 30px;
+        background-color: #fff;
+        font-size: 14px;
+    }
+
     @media screen and (max-width: 400px) {
         .works-item .footer .use {
             font-size: 14px;
